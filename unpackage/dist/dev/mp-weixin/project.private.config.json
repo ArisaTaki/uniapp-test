@@ -1,0 +1,30 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/indexss",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "subpages/careChat/careChat",
+                    "pathName": "subpages/careChat/careChat",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

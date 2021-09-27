@@ -1,8 +1,10 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
+		</view>
+		<view>
+			<navigator url="/subpages/careChat/careChat">goTo careChat!</navigator>
 		</view>
 	</view>
 </template>
@@ -11,11 +13,19 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'hello, index'
 			}
 		},
+		
+		onShow() {
+			console.log('index page show')
+		},
 		onLoad() {
-
+		console.log(getCurrentPages())
+		},
+		
+		onPullDownRefresh() {
+			console.log('页面刷新')
 		},
 		methods: {
 
