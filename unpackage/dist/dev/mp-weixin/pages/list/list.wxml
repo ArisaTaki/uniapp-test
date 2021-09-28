@@ -1,1 +1,1 @@
-<view><text>通讯录</text></view>
+<view><text>通讯录</text><view>{{userName}}</view><view class="btn"><button type="default" data-event-opts="{{[['tap',[['login',['ゴノシプ']]]]]}}" bindtap="__e">登录</button><button type="default" data-event-opts="{{[['tap',[['logout',['$event']]]]]}}" bindtap="__e">退出</button></view></view>

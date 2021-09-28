@@ -8679,19 +8679,21 @@ function walkJsonObj(jsonObj, walk) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 70));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 _vue.default.use(_vuex.default);
 
-var store = new _vue.default.Store({
+var store = new _vuex.default.Store({
   state: {
-    useName: 'ノゴイできましせ' },
+    userName: uni.getStorageSync('userName') ? uni.getStorageSync('userName') : 'ノゴイできましせ' },
 
   mutations: {
     MLOGIN: function MLOGIN(state, userName) {
-      state.useName = userName;
+      uni.setStorageSync('userName', userName);
+      state.userName = userName;
     },
     MLOGOUT: function MLOGOUT(state) {
+      uni.clearStorageSync();
       state.userName = 'オテウサ';
     } },
 
@@ -8699,13 +8701,14 @@ var store = new _vue.default.Store({
     login: function login(context, userName) {
       context.commit('MLOGIN', userName);
     },
-    logout: function logout(context, userName) {
+    logout: function logout(context) {
       context.commit('MLOGOUT');
     } } });var _default =
 
 
 
 store;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
