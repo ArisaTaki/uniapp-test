@@ -57,12 +57,15 @@
 			}
 		},
 		onShow() {
-			if(uni.getStorageSync('charList')) {
+			if (!!uni.getStorageSync('charList')) {
 				this.chatList = JSON.parse(uni.getStorageSync('charList'))
-				uni.pageScrollTo({
-					scrollTop:999999,
-					duration:0
-				})
+				let timer = setTimeout(() => {
+					uni.pageScrollTo({
+						scrollTop: 999999,
+						duration: 0
+					})
+					clearTimeout(timer)
+				}, 1)
 			}
 		},
 		methods: {
@@ -78,19 +81,22 @@
 							content: res.tempFilePaths[0]
 						}
 						this.chatList.push(sendMsg)
-						
+
 						let resMsg = {
 							isMe: false,
 							type: 'img',
 							content: res.tempFilePaths[0]
 						}
 						this.chatList.push(resMsg)
-						
-						uni.pageScrollTo({
-							scrollTop:999999,
-							duration:0
-						})
-						
+
+						let timer = setTimeout(() => {
+							uni.pageScrollTo({
+								scrollTop: 999999,
+								duration: 0
+							})
+							clearTimeout(timer)
+						}, 1)
+
 						uni.setStorageSync('charList', JSON.stringify(this.chatList))
 					}
 				})
@@ -103,21 +109,24 @@
 					content: this.myInput
 				}
 				this.chatList.push(sendMsg)
-				
+
 				let resMsg = {
 					isMe: false,
 					type: 'txt',
 					content: this.myInput
 				}
 				this.chatList.push(resMsg)
-					
+
 				this.myInput = ''
-				
-				uni.pageScrollTo({
-					scrollTop:999999,
-					duration:0
-				})
-				
+
+				let timer = setTimeout(() => {
+					uni.pageScrollTo({
+						scrollTop: 999999,
+						duration: 0
+					})
+					clearTimeout(timer)
+				}, 1)
+
 				uni.setStorageSync('charList', JSON.stringify(this.chatList))
 			}
 		}

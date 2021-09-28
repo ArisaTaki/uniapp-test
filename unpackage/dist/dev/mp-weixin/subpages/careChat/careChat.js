@@ -189,12 +189,15 @@ var _default =
 
   },
   onShow: function onShow() {
-    if (uni.getStorageSync('charList')) {
+    if (!!uni.getStorageSync('charList')) {
       this.chatList = JSON.parse(uni.getStorageSync('charList'));
-      uni.pageScrollTo({
-        scrollTop: 999999,
-        duration: 0 });
+      var timer = setTimeout(function () {
+        uni.pageScrollTo({
+          scrollTop: 999999,
+          duration: 0 });
 
+        clearTimeout(timer);
+      }, 1);
     }
   },
   methods: {
@@ -218,10 +221,13 @@ var _default =
 
           _this.chatList.push(resMsg);
 
-          uni.pageScrollTo({
-            scrollTop: 999999,
-            duration: 0 });
+          var timer = setTimeout(function () {
+            uni.pageScrollTo({
+              scrollTop: 999999,
+              duration: 0 });
 
+            clearTimeout(timer);
+          }, 1);
 
           uni.setStorageSync('charList', JSON.stringify(_this.chatList));
         } });
@@ -245,10 +251,13 @@ var _default =
 
       this.myInput = '';
 
-      uni.pageScrollTo({
-        scrollTop: 999999,
-        duration: 0 });
+      var timer = setTimeout(function () {
+        uni.pageScrollTo({
+          scrollTop: 999999,
+          duration: 0 });
 
+        clearTimeout(timer);
+      }, 1);
 
       uni.setStorageSync('charList', JSON.stringify(this.chatList));
     } } };exports.default = _default;
