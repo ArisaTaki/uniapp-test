@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "uni-app",
   "enablePullDownRefresh": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "child": "/components/child"
+  }
 }

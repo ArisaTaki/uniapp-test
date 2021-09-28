@@ -1,1 +1,1 @@
-<view><text>me</text></view>
+<view><text>me</text><text>{{name}}</text></view>

@@ -5,16 +5,22 @@
 		</view>
 		<view>
 			<navigator url="/subpages/careChat/careChat">goTo careChat!</navigator>
+			<child :msg="title" @childEvent="sayHi"></child>
 		</view>
 	</view>
 </template>
 
 <script>
+	import Child from '@/components/child.vue'
 	export default {
 		data() {
 			return {
 				title: 'hello, index'
 			}
+		},
+		
+		components:{
+			Child
 		},
 		
 		onShow() {
@@ -28,7 +34,10 @@
 			console.log('页面刷新')
 		},
 		methods: {
-
+			sayHi(options) {
+				console.log(options)
+				this.title = `child Component ${options} connect to me`
+			}
 		}
 	}
 </script>

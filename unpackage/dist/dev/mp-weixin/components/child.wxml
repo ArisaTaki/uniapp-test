@@ -1,0 +1,1 @@
+<view class="data-v-efbcda1e"><text class="red data-v-efbcda1e">This is Child Components</text><text class="data-v-efbcda1e">{{"This is father message: "+msg}}</text><view class="btn data-v-efbcda1e"><button type="default" data-event-opts="{{[['tap',[['sayHiToFather',['$event']]]]]}}" bindtap="__e" class="data-v-efbcda1e">发送</button></view></view>

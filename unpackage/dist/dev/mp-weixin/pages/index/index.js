@@ -136,24 +136,30 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var Child = function Child() {__webpack_require__.e(/*! require.ensure | components/child */ "components/child").then((function () {return resolve(__webpack_require__(/*! @/components/child.vue */ 61));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
     return {
       title: 'hello, index' };
 
   },
+
+  components: {
+    Child: Child },
+
 
   onShow: function onShow() {
     console.log('index page show');
@@ -165,7 +171,11 @@ var _default =
   onPullDownRefresh: function onPullDownRefresh() {
     console.log('页面刷新');
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    sayHi: function sayHi(options) {
+      console.log(options);
+      this.title = "child Component ".concat(options, " connect to me");
+    } } };exports.default = _default;
 
 /***/ }),
 /* 18 */
